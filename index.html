@@ -321,7 +321,26 @@ function autoFullscreenOnLoad(){
 window.addEventListener("load", autoFullscreenOnLoad);
 window.addEventListener("orientationchange", autoFullscreenOnLoad);
 </script>
+<script>
+const bottomBar = document.getElementById("bottombar");
+
+// 1️⃣ Page load ke 5 sec baad hide kar do
+window.addEventListener("load", ()=>{
+  setTimeout(()=>{
+    bottomBar.style.display = "none";
+  }, 5000);
+});
+
+// 2️⃣ Random click pe show kar do
+document.addEventListener("click", (e)=>{
+  // Agar click bottom bar ke bahar hua ho
+  if(bottomBar.style.display === "none"){
+    bottomBar.style.display = "flex";
+  }
+});
+</script>
 
 </body>
 </html>
+
 
